@@ -1,0 +1,267 @@
+/* ─── Google Fonts ──────────────────────────────────────────────────────────
+   Libre Baskerville Italic: único acento tipográfico (arquivo local não incluído)
+   Blauer Nue: toda a tipografia — carregada localmente via @font-face abaixo
+─────────────────────────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@1,400&display=swap");
+
+/* ─── Blauer Nue — fontes locais ────────────────────────────────────────────*/
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Thin-iF6626350c96c3e.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Thin-Italic-iF6626350c9204d.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Extralight-iF6626350c56af4.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Extralight-Italic-iF6626350c51a9c.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Light-iF6626350c6db36.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Light-Italic-iF6626350c68fe5.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Regular-iF6626350c83fdf.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Regular-Italic-iF6626350c7f4f6.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Medium-iF6626350c78103.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Medium-Italic-iF6626350c725e0.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Semibold-iF6626350c8d55c.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Semibold-Italic-iF6626350c889ba.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Bold-Italic-iF6626350c420cc.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Extrabold-iF6626350c4c856.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Extrabold-Italic-iF6626350c47867.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Heavy-iF6626350c62afa.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Blauer Nue";
+  src: url("/fonts/Blauer-Nue-Heavy-Italic-iF6626350c5cbff.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ─── CSS Variables (disponíveis fora do Chakra) ───────────────────────────*/
+:root {
+  /* Brand */
+  --color-canvas: #1e1e1e;
+  --color-surface: #272727;
+  --color-elevated: #2c2c2c;
+  --color-border: #3a3a3a;
+
+  --color-white: #eeeeee;
+  --color-white-pure: #ffffff;
+  --color-gray-muted: #e1e1e1;
+  --color-gray-subtle: #9a9a9a;
+
+  --color-green-light: #687e62;
+  --color-green-dark: #4a5b45;
+  --color-red: #d24447;
+  --color-blue: #4450d2;
+
+  /* Typography */
+  --font-heading: "Blauer Nue", sans-serif;
+  --font-accent: "Libre Baskerville", Georgia, serif;
+  --font-body: "Blauer Nue", sans-serif;
+}
+
+/* ─── Grain / noise texture overlay ───────────────────────────────────────*/
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/noise.svg");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  opacity: 0.055;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Versão mais sutil para seções com gradiente */
+.grain-subtle::after {
+  opacity: 0.03;
+}
+
+/* ─── Timer — animação dos dígitos ────────────────────────────────────────*/
+@keyframes timerDigitIn {
+  from {
+    opacity: 0.25;
+    transform: translateY(-5px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.timer-digit {
+  animation: timerDigitIn 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─── Timer — piscar do separador ":" ─────────────────────────────────────*/
+@keyframes colonBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.timer-colon {
+  animation: colonBlink 1s ease-in-out infinite;
+}
+
+/* ─── Gradiente utilitário via classe CSS ─────────────────────────────────*/
+.bg-gradient-green {
+  background: radial-gradient(
+    ellipse 80% 50% at 30% 40%,
+    var(--color-green-light) 0%,
+    var(--color-canvas) 70%
+  );
+}
+
+.bg-gradient-red {
+  background: radial-gradient(
+    ellipse 80% 50% at 30% 40%,
+    var(--color-red) 0%,
+    var(--color-canvas) 70%
+  );
+}
+
+.bg-gradient-blue {
+  background: radial-gradient(
+    ellipse 80% 50% at 70% 40%,
+    var(--color-blue) 0%,
+    var(--color-canvas) 70%
+  );
+}
+
+.bg-gradient-dark {
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 100%,
+    var(--color-green-dark) 0%,
+    var(--color-canvas) 80%
+  );
+}
+
+/* ─── Autofill — evitar fundo branco do navegador ─────────────────────────*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset !important;
+  -webkit-text-fill-color: var(--color-white) !important;
+  background-color: var(--color-surface) !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* ─── Scrollbar personalizada ──────────────────────────────────────────────*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-green-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green-light);
+}

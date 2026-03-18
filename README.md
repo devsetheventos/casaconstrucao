@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# Casa Construção
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page oficial da Casa Construção, construída com React, TypeScript, Vite e Chakra UI v3.
 
-Currently, two official plugins are available:
+O projeto apresenta as seções da feira, conteúdo institucional, informações de visita e experiência visual premium com animações em Framer Motion.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React 19
+- TypeScript 5
+- Vite 8
+- Chakra UI v3
+- TanStack Router
+- Framer Motion
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Requisitos
 
-## Expanding the ESLint configuration
+- Node.js 20+ recomendado
+- npm 10+ recomendado
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Instalação
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Desenvolvimento
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Aplicação disponível em `http://localhost:5173`.
+
+## Scripts
+
+- `npm run dev`: inicia ambiente local com HMR
+- `npm run build`: valida TypeScript e gera build de produção
+- `npm run lint`: executa ESLint no projeto
+- `npm run preview`: sobe preview local do build
+- `npm run typegen`: gera tipagem de tema do Chakra UI
+
+## Estrutura principal
+
+```text
+src/
+  components/
+    app/                 # componentes de layout e seções da home
+    ui/                  # biblioteca de componentes base
+  constants/             # conteúdo da home (textos, datas, links)
+  motion/                # sistema de animações reutilizável (Framer Motion + Chakra)
+  routes/
+    -sections/           # seções da página inicial
+    design-system.tsx    # vitrine do design system
+  theme/                 # tokens, estilos globais e tema Chakra
+```
+
+## Animações
+
+O projeto usa um sistema reutilizável em `src/motion` com:
+
+- `MotionBox` para integrar Chakra UI e Framer Motion
+- presets de entrada (`fadeUp`, `fadeLeft`, `fadeRight`, `stagger`)
+- `SectionReveal` para animações por scroll com respeito a redução de movimento
+
+## SEO e metadados
+
+O `index.html` foi configurado com:
+
+- metatags completas para SEO
+- Open Graph e Twitter Cards
+- dados estruturados JSON-LD (`Organization` e `Event`)
+- canonical e ícones de aplicação
+
+## Design system
+
+Referências e documentação visual do projeto:
+
+- `THEME.md`
+- `UI_DESIGN_AUDIT_PLAN.md`
+- rota interna: `/design-system`
+
+## Build de produção
+
+```bash
+npm run build
+npm run preview
 ```

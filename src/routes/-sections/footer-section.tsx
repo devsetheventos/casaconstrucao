@@ -9,7 +9,7 @@ export function FooterSection() {
   const content = HOME_FOOTER_SECTION;
 
   return (
-    <Box as="footer" w="full" layerStyle="section.default" pt="10" pb="0">
+    <Box as="footer" w="full" layerStyle="section.default" pt={{ base: 6, md: 10 }} pb="0">
       <Box
         w="full"
         borderTopRadius={{ base: "2xl", md: "3xl" }}
@@ -24,7 +24,7 @@ export function FooterSection() {
           originX="12%"
           originY="84%"
           ellipseW={122}
-          ellipseH={54}
+          ellipseH={120}
           bgScale={1.48}
           noise
           gap={{ base: 5, md: 6 }}
@@ -32,10 +32,21 @@ export function FooterSection() {
           py={{ base: 5, md: 12 }}
           borderBottom="1px solid rgba(255,255,255,0.1)"
         >
-          <HStack justify="space-between" align="center" flexWrap="wrap" gap="4">
+          <HStack justify="space-between" align="center" w="full">
             <HStack gap={3}>
-              <Image src={"/svg/icon-light.svg"} alt={content.logoAlt} h={{ base: "38px", md: "60px" }} w="auto" />
-              <Image src={content.logoSrc} alt={content.logoAlt} h={{ base: "38px", md: "56px" }} w="auto" />
+              <Image
+                src={"/svg/icon-light.svg"}
+                alt={content.logoAlt}
+                h={{ base: "32px", md: "60px" }}
+                w="auto"
+              />
+              <Image
+                src={content.logoSrc}
+                alt={content.logoAlt}
+                h={{ base: "32px", md: "56px" }}
+                w="auto"
+                display={{ base: "none", md: "block" }}
+              />
             </HStack>
 
             <HStack gap="2">
@@ -67,9 +78,14 @@ export function FooterSection() {
           px={{ base: 4, md: 8, lg: 12 }}
           py={{ base: 3, md: 4 }}
           bg="transparent"
-          flexWrap="wrap"
+          gap="4"
         >
-          <Text textStyle="body.md" color="fg.subtle" fontSize={{ base: "sm", md: "lg" }}>
+          <Text
+            textStyle="body.md"
+            color="fg.subtle"
+            fontSize={{ base: "xs", md: "lg" }}
+            flex="1"
+          >
             {content.copyrightText}
           </Text>
           <IconButton

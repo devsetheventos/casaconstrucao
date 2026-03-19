@@ -24,9 +24,8 @@ export function HeroSection() {
   return (
     <Box
       as="section"
-      w="full"
       bg="bg.canvas"
-      pt={{ base: "80px", md: "100px" }}
+      pt={{ base: "72px", md: "100px" }}
       px={{ base: 4, md: 8 }}
     >
       <Stack gap="4" w="full" maxW="1400px" mx="auto">
@@ -40,7 +39,7 @@ export function HeroSection() {
           noise
           borderRadius="3xl"
           border="1px solid rgba(255, 255, 255, 0.05)"
-          py={{ base: 12, md: 24 }}
+          py={{ base: 8, md: 24 }}
           px={{ base: 4, md: 10 }}
         >
           <MotionBox initial="hidden" animate="show" variants={staggerContainer(reduceMotion)}>
@@ -49,18 +48,19 @@ export function HeroSection() {
                 <Image
                   src="/svg/icon-light.svg"
                   alt="Casa Construção Logo"
-                  h={{ base: "60px", md: "100px" }}
+                  h={{ base: "48px", md: "100px" }}
                   w="auto"
-                  mb="6"
+                  mb={{ base: 3, md: 6 }}
                 />
               </MotionBox>
               <MotionBox variants={fadeUp(reduceMotion)}>
                 <Image
                   src="/svg/logo-full-light.svg"
                   alt="Casa Construção Logo"
-                  h={{ base: "60px", md: "160px" }}
+                  h={{ base: "48px", md: "160px" }}
                   w="auto"
-                  mb="6"
+                  maxW="100%"
+                  mb={{ base: 3, md: 6 }}
                 />
               </MotionBox>
 
@@ -69,7 +69,7 @@ export function HeroSection() {
                   letterSpacing="wider"
                   fontWeight="200"
                   fontSize={{ base: "xs", md: "lg" }}
-                  mb="8"
+                  mb={{ base: 5, md: 8 }}
                   color="whiteAlpha.700"
                 >
                   Construção | Acabamentos | Mobiliário | Decoração
@@ -77,8 +77,8 @@ export function HeroSection() {
               </MotionBox>
 
               <MotionBox variants={fadeUp(reduceMotion)}>
-                <Box position="relative" mb="12">
-                  <Heading letterSpacing={"tighter"} fontSize={"7xl"} lineHeight="1.1">
+                <Box position="relative" mb={{ base: 7, md: 12 }}>
+                  <Heading letterSpacing={"tighter"} fontSize={{ base: "5xl", md: "7xl" }} lineHeight="1.1">
                     Do
                     <Text
                       as="span"
@@ -118,10 +118,12 @@ export function HeroSection() {
                 whileHover={reduceMotion ? undefined : { y: -2, scale: 1.01 }}
                 whileTap={reduceMotion ? undefined : { scale: 0.98 }}
                 transition={pressableTransition(reduceMotion)}
-                display="inline-block"
+                display={{ base: "block", md: "inline-block" }}
+                w={{ base: "full", md: "auto" }}
               >
                 <Button
                   onClick={() => navigate({ to: "/" })}
+                  w={{ base: "full", md: "fit-content" }}
                   size="lg"
                   bg="brand.red"
                   color="fg.default"

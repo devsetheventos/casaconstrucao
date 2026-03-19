@@ -1,6 +1,8 @@
 export interface HomeSegmentItem {
   title: string;
   topics: string[];
+  imageSrc: string;
+  imageAlt: string;
 }
 
 export interface HomeSegmentsSectionContent {
@@ -11,7 +13,7 @@ export interface HomeSegmentsSectionContent {
 
 export const HOME_SEGMENTS_SECTION: HomeSegmentsSectionContent = {
   heading: "Segmentos presentes",
-  description: "E muito mais. Mais de 200 expositores nos principais segmentos da construção e decoração.",
+  description: "E muito mais. Mais de 100 expositores nos principais segmentos da construção e decoração.",
   segments: [
     {
       title: "Construção",
@@ -25,6 +27,8 @@ export const HOME_SEGMENTS_SECTION: HomeSegmentsSectionContent = {
         "Tintas",
         "Ferramentas",
       ],
+      imageSrc: "/images/segmentos/back-view-family-hugging-admiring-their-home%202.png",
+      imageAlt: "Família observando sua nova casa",
     },
     {
       title: "Interiores",
@@ -38,6 +42,8 @@ export const HOME_SEGMENTS_SECTION: HomeSegmentsSectionContent = {
         "Cozinhas",
         "Banheiros",
       ],
+      imageSrc: "/images/segmentos/freepik__closeup-of-a-modern-moss-green-sofa-with-boucl-fab__86563%202.png",
+      imageAlt: "Detalhe de um sofá verde moderno",
     },
     {
       title: "Design e Detalhes",
@@ -51,6 +57,8 @@ export const HOME_SEGMENTS_SECTION: HomeSegmentsSectionContent = {
         "Plantas",
         "Acessórios",
       ],
+      imageSrc: "/images/segmentos/jason-briscoe-AQl-J19ocWE-unsplash%202.png",
+      imageAlt: "Cozinha contemporânea com excelente design de interiores",
     },
   ],
 };

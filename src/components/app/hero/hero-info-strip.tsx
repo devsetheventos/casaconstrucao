@@ -13,15 +13,15 @@ export function HeroInfoStrip() {
       viewport={{ once: true, amount: 0.4 }}
       variants={staggerContainer(reduceMotion)}
     >
-      <HStack
+      <Stack
+        direction={{ base: "column", md: "row" }}
         justify="center"
         align="center"
         w="full"
-        gap={{ base: 6, md: 24 }}
+        gap={{ base: 5, md: 24 }}
         mt="4"
         py={{ base: 6, md: 8 }}
-        px="4"
-        flexWrap="wrap"
+        px={{ base: 6, md: 8 }}
       >
         <MotionBox variants={fadeUp(reduceMotion)}>
           <HStack gap="3">
@@ -105,7 +105,7 @@ export function HeroInfoStrip() {
             </Stack>
           </HStack>
         </MotionBox>
-      </HStack>
+      </Stack>
     </MotionBox>
   );
 }

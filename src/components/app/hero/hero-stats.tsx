@@ -19,17 +19,18 @@ export function HeroStats() {
       animate="show"
       variants={staggerContainer(reduceMotion)}
       display="flex"
-      flexDirection={{ base: "column", md: "row" }}
+      flexDirection="row"
+      flexWrap={{ base: "wrap", md: "nowrap" }}
       alignItems="center"
       justifyContent="space-evenly"
       w="full"
       mx="auto"
-      mt={{ base: 12, md: 24 }}
-      py={{ base: 4, md: 4 }}
-      px={{ base: 4, md: 4 }}
+      mt={{ base: 8, md: 24 }}
+      py={{ base: 4, md: 8 }}
+      px={{ base: 4, md: 24 }}
       border="1px solid rgba(255, 255, 255, 0.1)"
       borderRadius={{ base: "xl", md: "full" }}
-      gap={{ base: 6, md: 4 }}
+      gap={{ base: 0, md: 12 }}
     >
       {STATS.map((stat) => (
         <MotionBox
@@ -39,11 +40,13 @@ export function HeroStats() {
           flexDirection="column"
           alignItems="center"
           textAlign="center"
+          w={{ base: "50%", md: "auto" }}
+          py={{ base: 4, md: 0 }}
         >
           <Stack gap="0" align="center" textAlign="center">
             <Text
               textStyle="numeric"
-              fontSize={{ base: "4xl", md: "5xl" }}
+              fontSize={{ base: "3xl", md: "5xl" }}
               fontWeight="300"
               lineHeight={1.1}
               textAlign="center"

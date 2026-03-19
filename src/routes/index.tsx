@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Box, Stack } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { HeroSection } from "./-sections/hero-section";
-import { VideoSection } from "./-sections/video-section";
+// import { VideoSection } from "./-sections/video-section";
 import { BenefitsSection } from "./-sections/benefits-section";
 import { SegmentsSection } from "./-sections/segments-section";
 import { GallerySection } from "./-sections/gallery-section";
@@ -29,9 +29,9 @@ function HomePage() {
       <Box id={HOME_SECTION_IDS.top}>
         <HeroSection />
       </Box>
-      <Box id={HOME_SECTION_IDS.video}>
+      {/* <Box id={HOME_SECTION_IDS.video}>
         <VideoSection />
-      </Box>
+      </Box> */}
       <Box id={HOME_SECTION_IDS.benefits}>
         <BenefitsSection />
       </Box>

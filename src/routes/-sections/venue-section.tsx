@@ -28,7 +28,7 @@ function MapEmbed({ src }: { src: string }) {
 
 export function VenueSection() {
   return (
-    <Box as="section" w="full" layerStyle="section.default" px={{ base: 4, md: 8 }} py="20">
+    <Box as="section" w="full" layerStyle="section.default" px={{ base: 4, md: 8 }} py={{ base: 10, md: 20 }}>
       <Box
         w="full"
         maxW="1400px"
@@ -55,27 +55,31 @@ export function VenueSection() {
             </Box>
 
             <Stack flex={{ md: 1.6 }} justify="center" gap="3">
-              <HStack gap="3" flexWrap="wrap" color="fg.inkMuted">
                 <Text textStyle="h3" color="fg.inkMuted">
-                  {HOME_VENUE_SECTION.cityEdition}
+                {HOME_VENUE_SECTION.cityEdition}
+                <Text as="span" fontFamily="'Libre Baskerville', Georgia, serif" fontStyle="italic">
+                  {" "}- {HOME_VENUE_SECTION.dateRange}
                 </Text>
-                <Text textStyle="h3" color="fg.inkMuted" fontFamily="'Libre Baskerville', Georgia, serif" fontStyle="italic">
-                  - {HOME_VENUE_SECTION.dateRange}
-                </Text>
-              </HStack>
+              </Text>
 
-              <Heading as="h2" textStyle="h1" color="fg.ink" lineHeight="1.05">
+              <Heading
+                as="h2"
+                textStyle="h1"
+                color="fg.ink"
+                fontSize={{ base: "2xl", md: "4xl" }}
+                lineHeight={{ base: "1.2", md: "1.05" }}
+              >
                 {HOME_VENUE_SECTION.venueName}
               </Heading>
-              <Text textStyle="h2" color="fg.ink">
+              <Text textStyle="h2" color="fg.ink" fontSize={{ base: "xl", md: "3xl" }}>
                 {HOME_VENUE_SECTION.sector}
               </Text>
-              <Text textStyle="body.lg" color="fg.inkMuted">
+              <Text textStyle="body.lg" color="fg.inkMuted" fontSize={{ base: "sm", md: "lg" }}>
                 {HOME_VENUE_SECTION.address}
               </Text>
 
               <Button
-                w="fit-content"
+                w={{ base: "full", md: "fit-content" }}
                 size="lg"
                 px={{ base: 8, md: 12 }}
                 borderRadius="full"
@@ -102,7 +106,7 @@ export function VenueSection() {
             backdropFilter="blur(4px)"
           >
             <HStack justify="space-between" align="center">
-              <Text textStyle="h1" color="fg.ink">
+              <Text textStyle="h1" color="fg.ink" fontSize={{ base: "2xl", md: "4xl" }}>
                 {HOME_VENUE_SECTION.scheduleTitle}
               </Text>
               <Badge

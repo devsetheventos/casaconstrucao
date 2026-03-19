@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { GradientSection } from "@/components/ui/gradient-section";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -88,19 +88,20 @@ export function HeroCountdown() {
       px="6"
     >
       <Flex
-        direction={{ base: "column", md: "row" }}
+        direction="row"
         align="center"
         justify="center"
-        gap={{ base: 6, md: 16 }}
+        gap={{ base: 3, md: 10 }}
         position="relative"
         zIndex="1"
         transition="opacity 0.6s ease-in-out"
         opacity={timeLeft.isReady ? 1 : 0}
       >
+        {/* Dias */}
         <Stack gap="0" align="center">
           <Box
             {...{ textStyle: "numeric" }}
-            fontSize={{ base: "6xl", md: "8xl" }}
+            fontSize={{ base: "4xl", md: "8xl" }}
             fontWeight="300"
             lineHeight="1"
             letterSpacing="widest"
@@ -108,54 +109,91 @@ export function HeroCountdown() {
           >
             <AnimatedNumber value={pad(timeLeft.days)} />
           </Box>
-          <Text textStyle="label" mt="2" color="#EEEEEE">
+          <Text textStyle="label" mt="2" color="#EEEEEE" fontSize={{ base: "xs", md: "sm" }}>
             Dias
           </Text>
         </Stack>
 
+        {/* Vertical divider */}
+        <Box
+          h={{ base: "40px", md: "70px" }}
+          w="1px"
+          bg="rgba(255,255,255,0.15)"
+          flexShrink={0}
+          mb={{ base: "20px", md: "32px" }}
+        />
+
+        {/* Horas */}
         <Stack gap="0" align="center">
           <Box
             {...{ textStyle: "numeric" }}
-            fontSize={{ base: "6xl", md: "8xl" }}
+            fontSize={{ base: "4xl", md: "8xl" }}
             fontWeight="300"
             lineHeight="1"
             letterSpacing="widest"
-            style={{ fontVariantNumeric: "tabular-nums", display: "flex", alignItems: "center" }}
+            style={{ fontVariantNumeric: "tabular-nums" }}
           >
             <AnimatedNumber value={pad(timeLeft.hours)} />
-            <Text
-              as="span"
-              color="rgba(255,255,255,0.2)"
-              mx={{ base: 1, md: 2 }}
-            >
-              :
-            </Text>
+          </Box>
+          <Text textStyle="label" mt="2" color="#EEEEEE" fontSize={{ base: "xs", md: "sm" }}>
+            Horas
+          </Text>
+        </Stack>
+
+        {/* Colon separator */}
+        <Text
+          fontSize={{ base: "3xl", md: "6xl" }}
+          color="rgba(255,255,255,0.2)"
+          lineHeight="1"
+          mb={{ base: "22px", md: "38px" }}
+          flexShrink={0}
+        >
+          :
+        </Text>
+
+        {/* Minutos */}
+        <Stack gap="0" align="center">
+          <Box
+            {...{ textStyle: "numeric" }}
+            fontSize={{ base: "4xl", md: "8xl" }}
+            fontWeight="300"
+            lineHeight="1"
+            letterSpacing="widest"
+            style={{ fontVariantNumeric: "tabular-nums" }}
+          >
             <AnimatedNumber value={pad(timeLeft.minutes)} />
-            <Text
-              as="span"
-              color="rgba(255,255,255,0.2)"
-              mx={{ base: 1, md: 2 }}
-            >
-              :
-            </Text>
+          </Box>
+          <Text textStyle="label" mt="2" color="#EEEEEE" fontSize={{ base: "xs", md: "sm" }}>
+            Min
+          </Text>
+        </Stack>
+
+        {/* Colon separator */}
+        <Text
+          fontSize={{ base: "3xl", md: "6xl" }}
+          color="rgba(255,255,255,0.2)"
+          lineHeight="1"
+          mb={{ base: "22px", md: "38px" }}
+          flexShrink={0}
+        >
+          :
+        </Text>
+
+        {/* Segundos */}
+        <Stack gap="0" align="center">
+          <Box
+            {...{ textStyle: "numeric" }}
+            fontSize={{ base: "4xl", md: "8xl" }}
+            fontWeight="300"
+            lineHeight="1"
+            letterSpacing="widest"
+            style={{ fontVariantNumeric: "tabular-nums" }}
+          >
             <AnimatedNumber value={pad(timeLeft.seconds)} />
           </Box>
-          <HStack
-            gap={{ base: 10, md: 20 }}
-            mt="2"
-            w={{ base: "85%", md: "78%" }}
-            justify="space-between"
-          >
-            <Text textStyle="label" color="#EEEEEE">
-              Horas
-            </Text>
-            <Text textStyle="label" color="#EEEEEE">
-              Min
-            </Text>
-            <Text textStyle="label" color="#EEEEEE">
-              Seg
-            </Text>
-          </HStack>
+          <Text textStyle="label" mt="2" color="#EEEEEE" fontSize={{ base: "xs", md: "sm" }}>
+            Seg
+          </Text>
         </Stack>
       </Flex>
     </GradientSection>

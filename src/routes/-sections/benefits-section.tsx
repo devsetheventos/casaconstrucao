@@ -1,7 +1,16 @@
-import { Box, Center, Heading, HStack, Icon, Stack, Text } from "@chakra-ui/react";
+import { Center, Flex, Heading, Icon, Stack, Text } from "@chakra-ui/react";
 import type { IconType } from "react-icons";
-import { LuBadgeHelp, LuHandshake, LuLayers, LuSearch, LuShoppingCart } from "react-icons/lu";
-import { HOME_BENEFITS_SECTION, type BenefitIconKey } from "@/constants/home-benefits";
+import {
+  LuBadgeHelp,
+  LuHandshake,
+  LuLayers,
+  LuSearch,
+  LuShoppingCart,
+} from "react-icons/lu";
+import {
+  HOME_BENEFITS_SECTION,
+  type BenefitIconKey,
+} from "@/constants/home-benefits";
 import { GradientSection } from "@/components/ui/gradient-section";
 import { useReducedMotion } from "framer-motion";
 import { MotionBox } from "@/motion/chakra-motion";
@@ -20,18 +29,26 @@ export function BenefitsSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <Box as="section" w="full" layerStyle="section.default" px={{ base: 4, md: 8 }} py="20">
+    <Flex
+      as="section"
+      layerStyle="section.default"
+      px={{ base: 4, md: 8 }}
+      py={{ base: 10, md: 20 }}
+      justify="center"
+    >
       <GradientSection
-        color="dark"
+        color={"red"}
         rotateDeg={-8}
         originX="12%"
         originY="12%"
-        ellipseW={118}
-        ellipseH={58}
+        ellipseW={5}
+        ellipseH={100}
+        maxW="1400px"
+        w="full"
         noise
         borderRadius="3xl"
         border="1px solid rgba(255, 255, 255, 0.08)"
-        py={{ base: 10, md: 14 }}
+        py={{ base: 8, md: 14 }}
         px={{ base: 4, md: 8, lg: 10 }}
       >
         <SectionReveal>
@@ -67,7 +84,7 @@ export function BenefitsSection() {
               </Stack>
             </MotionBox>
 
-            <Stack gap="3">
+            <Stack gap="6">
               {HOME_BENEFITS_SECTION.items.map((item) => {
                 const ItemIcon = ICONS[item.icon];
                 return (
@@ -77,11 +94,13 @@ export function BenefitsSection() {
                     whileHover={reduceMotion ? undefined : { y: -3 }}
                     transition={pressableTransition(reduceMotion)}
                   >
-                    <HStack
-                      align="center"
+                    <Stack
+                      direction={{ base: "column", md: "row" }}
+                      align={{ base: "center", md: "center" }}
+                      textAlign={{ base: "center", md: "left" }}
                       gap={{ base: 3, md: 5 }}
                       px={{ base: 4, md: 6 }}
-                      py={{ base: 4, md: 5 }}
+                      py={{ base: 5, md: 5 }}
                       border="1px solid rgba(238, 238, 238, 0.1)"
                       borderRadius="2xl"
                       bg="rgba(30, 30, 30, 0.55)"
@@ -93,14 +112,18 @@ export function BenefitsSection() {
                         borderRadius="lg"
                         bg="#EEEEEE"
                         color="#1E1E1E"
+                        display="flex"
                       >
-                        <Icon as={ItemIcon} boxSize={{ base: "26px", md: "34px" }} />
+                        <Icon
+                          as={ItemIcon}
+                          boxSize={{ base: "26px", md: "34px" }}
+                        />
                       </Center>
-                      <Stack gap="1">
+                      <Stack gap="1.5">
                         <Text
                           fontFamily="'Blauer Nue', sans-serif"
-                          fontSize={{ base: "2xl", md: "4xl" }}
-                          lineHeight="1.1"
+                          fontSize={{ base: "xl", md: "4xl" }}
+                          lineHeight={{ base: "1.25", md: "1" }}
                           color="#EEEEEE"
                         >
                           {item.title}
@@ -108,12 +131,13 @@ export function BenefitsSection() {
                         <Text
                           textStyle="body.lg"
                           color="#9A9A9A"
-                          fontSize={{ base: "md", md: "2xl" }}
+                          lineHeight={{ base: "1.5", md: "1" }}
+                          fontSize={{ base: "sm", md: "2xl" }}
                         >
                           {item.description}
                         </Text>
                       </Stack>
-                    </HStack>
+                    </Stack>
                   </MotionBox>
                 );
               })}
@@ -125,12 +149,16 @@ export function BenefitsSection() {
                 textAlign="center"
                 fontFamily="'Blauer Nue', sans-serif"
                 fontWeight="500"
-                fontSize={{ base: "4xl", md: "6xl" }}
+                fontSize={{ base: "3xl", md: "6xl" }}
                 lineHeight="1.1"
                 color="#EEEEEE"
               >
                 {HOME_BENEFITS_SECTION.footerStart}{" "}
-                <Text as="span" fontFamily="'Libre Baskerville', Georgia, serif" fontStyle="italic">
+                <Text
+                  as="span"
+                  fontFamily="'Libre Baskerville', Georgia, serif"
+                  fontStyle="italic"
+                >
                   {HOME_BENEFITS_SECTION.footerAccent}
                 </Text>
               </Heading>
@@ -138,6 +166,6 @@ export function BenefitsSection() {
           </Stack>
         </SectionReveal>
       </GradientSection>
-    </Box>
+    </Flex>
   );
 }

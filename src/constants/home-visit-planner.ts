@@ -32,7 +32,7 @@ export const HOME_VISIT_PLANNER_SECTION: HomeVisitPlannerSectionContent = {
   locationInfo: {
     label: "Onde",
     title: "Parque Vila Germânica",
-    details: "Pavilhão 00 · R. Alberto Stein, 199 · Velha, Blumenau",
+    details: "Pavilhão 02 - R. Alberto Stein, 199 - Velha, Blumenau - SC",
   },
   mapLabel: "Ver no mapa",
   mapUrl: "https://maps.google.com/?q=Parque+Vila+Germanica+Blumenau",

@@ -10,7 +10,7 @@ export interface HomeNextEditionsSectionContent {
   editionLabel: string;
   dateRange: string;
   venueName: string;
-  sector: string;
+  sector?: string;
   address: string;
   mapLabel: string;
   mapUrl: string;
@@ -28,7 +28,6 @@ export const HOME_NEXT_EDITIONS_SECTION: HomeNextEditionsSectionContent = {
   editionLabel: "Edição Joinville",
   dateRange: "4 a 7 de Setembro",
   venueName: "Expoville",
-  sector: "Setor 00",
   address: "R. XV de Novembro, 4315 - Glória, Joinville",
   mapLabel: "Ver no mapa",
   mapUrl: "https://maps.google.com/?q=Expoville+Joinville",

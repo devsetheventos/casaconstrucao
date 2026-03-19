@@ -22,7 +22,7 @@ export const HOME_VENUE_SECTION: HomeVenueSectionContent = {
   cityEdition: "Edição Blumenau",
   dateRange: "9 a 12 de Julho",
   venueName: "Parque Vila Germânica",
-  sector: "Setor 00",
+  sector: "Setor 02",
   address: "R. Alberto Stein, 199 - Velha, Blumenau",
   mapLabel: "Ver no mapa",
   mapUrl: "https://maps.google.com/?q=Parque+Vila+Germanica+Blumenau",

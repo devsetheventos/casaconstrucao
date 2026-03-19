@@ -1,13 +1,23 @@
-import { Box, Button, Center, HStack, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  HStack,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { HOME_VISIT_PLANNER_SECTION } from "@/constants/home-visit-planner";
 import { GradientSection } from "@/components/ui/gradient-section";
 import { openExternalLink } from "@/lib/openExternalLink";
 
 function PlannerInfoBlock({
+  iconSrc,
   label,
   title,
   details,
 }: {
+  iconSrc: string;
   label: string;
   title: string;
   details: string;
@@ -15,20 +25,35 @@ function PlannerInfoBlock({
   return (
     <HStack align="start" gap={{ base: 3, md: 4 }}>
       <Center
-        boxSize={{ base: "42px", md: "54px" }}
+        boxSize={{ base: "52px", md: "64px" }}
         borderRadius="xl"
-        bg="rgba(255,255,255,0.22)"
-        border="1px solid rgba(255,255,255,0.28)"
+        bg="rgba(0,0,0,0.25)"
+        border="1px solid rgba(255,255,255,0.12)"
         flexShrink={0}
-      />
+      >
+        <Image src={iconSrc} alt="" boxSize={{ base: "28px", md: "34px" }} />
+      </Center>
       <Stack gap="0.5">
-        <Text textStyle="h3" color="rgba(238,238,238,0.72)" fontSize={{ base: "2xl", md: "3xl" }}>
+        <Text
+          textStyle="h3"
+          color="rgba(238,238,238,0.72)"
+          fontSize={{ base: "xl", md: "3xl" }}
+        >
           {label}
         </Text>
-        <Text textStyle="h2" color="#EEEEEE" fontSize={{ base: "4xl", md: "5xl" }} lineHeight="1.05">
+        <Text
+          textStyle="h2"
+          color="#EEEEEE"
+          fontSize={{ base: "3xl", md: "5xl" }}
+          lineHeight="1.05"
+        >
           {title}
         </Text>
-        <Text textStyle="body.md" color="rgba(238,238,238,0.84)" fontSize={{ base: "sm", md: "lg" }}>
+        <Text
+          textStyle="body.md"
+          color="rgba(238,238,238,0.84)"
+          fontSize={{ base: "sm", md: "lg" }}
+        >
           {details}
         </Text>
       </Stack>
@@ -40,7 +65,12 @@ export function VisitPlannerSection() {
   const content = HOME_VISIT_PLANNER_SECTION;
 
   return (
-    <Box as="section" w="full" layerStyle="section.default" px={{ base: 4, md: 8 }} py="20">
+    <Box
+      as="section"
+      layerStyle="section.default"
+      px={{ base: 4, md: 8 }}
+      py={{ base: 10, md: 20 }}
+    >
       <GradientSection
         color="red"
         customColor="#A1272E"
@@ -48,23 +78,44 @@ export function VisitPlannerSection() {
         originX="12%"
         originY="14%"
         ellipseW={132}
-        ellipseH={64}
+        ellipseH={100}
         bgScale={1.55}
         noise
         borderRadius="3xl"
         border="1px solid rgba(238,238,238,0.22)"
         px={{ base: 4, md: 8 }}
         py={{ base: 8, md: 10 }}
+        maxW="1400px"
+        mx="auto"
       >
-        <Stack w="full" maxW="1300px" mx="auto" gap={{ base: 6, md: 8 }} align="center" textAlign="center">
+        <Stack
+          w="full"
+          maxW="1400px"
+          mx="auto"
+          gap={{ base: 6, md: 8 }}
+          align="center"
+          textAlign="center"
+        >
           <Stack gap="2">
-            <Text textStyle="h1" fontSize={{ base: "5xl", md: "7xl" }} color="#EEEEEE">
+            <Text
+              textStyle="h1"
+              fontSize={{ base: "4xl", md: "7xl" }}
+              color="#EEEEEE"
+            >
               {content.heading}
             </Text>
-            <Text textStyle="h3" color="#E1E1E1" fontSize={{ base: "xl", md: "3xl" }}>
+            <Text
+              textStyle="h3"
+              color="#E1E1E1"
+              fontSize={{ base: "xl", md: "3xl" }}
+            >
               {content.subheading}
             </Text>
-            <Text textStyle="body.md" color="#E1E1E1" fontSize={{ base: "md", md: "2xl" }}>
+            <Text
+              textStyle="body.md"
+              color="#E1E1E1"
+              fontSize={{ base: "md", md: "2xl" }}
+            >
               {content.helperText}
             </Text>
           </Stack>
@@ -81,19 +132,28 @@ export function VisitPlannerSection() {
             bg="rgba(0,0,0,0.14)"
           >
             <PlannerInfoBlock
+              iconSrc="/svg/next-expedition/calendar.svg"
               label={content.dateInfo.label}
               title={content.dateInfo.title}
               details={content.dateInfo.details}
             />
             <PlannerInfoBlock
+              iconSrc="/svg/next-expedition/expoville.svg"
               label={content.locationInfo.label}
               title={content.locationInfo.title}
               details={content.locationInfo.details}
             />
 
-            <HStack gap="4" justify="center" flexWrap="wrap">
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              gap="4"
+              justify="center"
+              align="center"
+              w="full"
+            >
               <Button
                 size="lg"
+                w={{ base: "full", md: "fit-content" }}
                 px={{ base: 8, md: 12 }}
                 borderRadius="full"
                 bg="#EEEEEE"
@@ -106,6 +166,7 @@ export function VisitPlannerSection() {
               </Button>
               <Button
                 size="lg"
+                w={{ base: "full", md: "fit-content" }}
                 px={{ base: 8, md: 12 }}
                 borderRadius="full"
                 bg="#8B1F25"
@@ -117,23 +178,40 @@ export function VisitPlannerSection() {
               >
                 {content.calendarLabel}
               </Button>
-            </HStack>
+            </Stack>
           </Stack>
 
           <Stack gap="0.5">
-            <Text textStyle="h3" color="#EEEEEE" fontSize={{ base: "2xl", md: "3xl" }}>
+            <Text
+              textStyle="h3"
+              color="#EEEEEE"
+              fontSize={{ base: "2xl", md: "3xl" }}
+            >
               {content.cashbackTitle}
             </Text>
-            <Text textStyle="body.md" color="#E1E1E1" fontSize={{ base: "md", md: "xl" }}>
+            <Text
+              textStyle="body.md"
+              color="#E1E1E1"
+              fontSize={{ base: "md", md: "xl" }}
+            >
               {content.cashbackNote}
             </Text>
           </Stack>
 
           <Stack gap="1">
-            <Text textStyle="h1" color="#EEEEEE" fontSize={{ base: "5xl", md: "7xl" }}>
+            <Text
+              textStyle="h1"
+              color="#EEEEEE"
+              fontSize={{ base: "3xl", md: "7xl" }}
+            >
               {content.bottomHeading}
             </Text>
-            <Text textStyle="h3" color="#E1E1E1" fontSize={{ base: "xl", md: "3xl" }} maxW="900px">
+            <Text
+              textStyle="h3"
+              color="#E1E1E1"
+              fontSize={{ base: "xl", md: "3xl" }}
+              maxW="900px"
+            >
               {content.bottomDescription}
             </Text>
           </Stack>

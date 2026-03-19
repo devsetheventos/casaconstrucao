@@ -1,4 +1,13 @@
-import { Badge, Box, Button, HStack, Icon, Image, Stack, Text } from "@chakra-ui/react";
+import {
+  Badge,
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { LuArrowRight, LuCheck } from "react-icons/lu";
 import { HOME_PARTNERSHIP_CTAS } from "@/constants/home-partnership-ctas";
 import { GradientSection } from "@/components/ui/gradient-section";
@@ -12,7 +21,7 @@ const VARIANT_STYLE = {
     originX: "18%",
     originY: "14%",
     ellipseW: 132,
-    ellipseH: 64,
+    ellipseH: 120,
     bgScale: 1.5,
     accent: "#D24447",
     buttonBg: "#D24447",
@@ -25,8 +34,8 @@ const VARIANT_STYLE = {
     rotateDeg: -18,
     originX: "86%",
     originY: "8%",
-    ellipseW: 138,
-    ellipseH: 62,
+    ellipseW: 200,
+    ellipseH: 80,
     bgScale: 1.52,
     accent: "#8C96FF",
     buttonBg: "#4450D2",
@@ -43,7 +52,12 @@ const LOGO_SIZE_MAP = {
 
 export function PartnershipCtaSection() {
   return (
-    <Box as="section" w="full" layerStyle="section.default" px={{ base: 4, md: 8 }} py="20">
+    <Box
+      as="section"
+      layerStyle="section.default"
+      px={{ base: 4, md: 8 }}
+      py={{ base: 10, md: 20 }}
+    >
       <Stack w="full" maxW="1400px" mx="auto" gap="5">
         {HOME_PARTNERSHIP_CTAS.map((item) => {
           const style = VARIANT_STYLE[item.variant];
@@ -64,7 +78,13 @@ export function PartnershipCtaSection() {
               px={{ base: 5, md: 8 }}
               py={{ base: 6, md: 8 }}
             >
-              <Stack gap="5" maxW="900px" mx="auto" align="center" textAlign="center">
+              <Stack
+                gap="5"
+                maxW="900px"
+                mx="auto"
+                align="center"
+                textAlign="center"
+              >
                 <Badge
                   w="fit-content"
                   bg="rgba(255,255,255,0.14)"
@@ -80,7 +100,12 @@ export function PartnershipCtaSection() {
                   {item.tag}
                 </Badge>
 
-                <Text textStyle="h1" fontSize={{ base: "3xl", md: "5xl" }} lineHeight="1.03" color="#EEEEEE">
+                <Text
+                  textStyle="h1"
+                  fontSize={{ base: "2xl", md: "5xl" }}
+                  lineHeight={{ base: "1.25", md: "1.03" }}
+                  color="#EEEEEE"
+                >
                   {item.titleStart}{" "}
                   <Text
                     as="span"
@@ -92,22 +117,36 @@ export function PartnershipCtaSection() {
                   </Text>
                 </Text>
 
-                <Text textStyle="body.lg" fontSize={{ base: "md", md: "xl" }} color="#E1E1E1" maxW="760px">
+                <Text
+                  textStyle="body.lg"
+                  fontSize={{ base: "md", md: "xl" }}
+                  color="#E1E1E1"
+                  maxW="760px"
+                >
                   {item.description}
                 </Text>
 
                 <Stack gap="2" align="center">
                   {item.highlights.map((highlight) => (
-                    <HStack key={highlight} gap="2" align="center" justify="center">
+                    <HStack
+                      key={highlight}
+                      gap="2"
+                      align="center"
+                      justify="center"
+                    >
                       <Icon as={LuCheck} color={style.accent} boxSize="5" />
-                      <Text textStyle="body.md" color="#E1E1E1" fontSize={{ base: "sm", md: "md" }}>
+                      <Text
+                        textStyle="body.md"
+                        color="#E1E1E1"
+                        fontSize={{ base: "sm", md: "md" }}
+                      >
                         {highlight}
                       </Text>
                     </HStack>
                   ))}
                 </Stack>
 
-                <HStack gap="2" flexWrap="wrap">
+                <HStack gap="2" flexWrap="wrap" justify="center">
                   {item.supportLabels.map((label) => (
                     <Badge
                       key={label}
@@ -134,10 +173,14 @@ export function PartnershipCtaSection() {
                     w="full"
                     py="4"
                   >
-                    {item.logos.map((logo) => (
+                    {item.logos.map((logo) =>
                       (() => {
-                        const fileName = logo.split("/").pop() as keyof typeof LOGO_SIZE_MAP;
-                        const logoSize = LOGO_SIZE_MAP[fileName] ?? { h: { base: "34px", md: "46px" } };
+                        const fileName = logo
+                          .split("/")
+                          .pop() as keyof typeof LOGO_SIZE_MAP;
+                        const logoSize = LOGO_SIZE_MAP[fileName] ?? {
+                          h: { base: "34px", md: "46px" },
+                        };
                         return (
                           <Image
                             key={logo}
@@ -149,13 +192,13 @@ export function PartnershipCtaSection() {
                             opacity="0.95"
                           />
                         );
-                      })()
-                    ))}
+                      })(),
+                    )}
                   </HStack>
                 ) : null}
 
                 <Button
-                  w="fit-content"
+                  w={{ base: "full", md: "fit-content" }}
                   size="lg"
                   borderRadius="full"
                   px="8"

@@ -27,7 +27,7 @@ export const HOME_VISIT_PLANNER_SECTION: HomeVisitPlannerSectionContent = {
   dateInfo: {
     label: "Quando",
     title: "9 a 12 de Julho",
-    details: "Qui: 18h às 22h | Sex: 17h às 21h | Sáb: 10h às 22h | Dom: 10h às 19h",
+    details: "Qui: 10h às 21h | Sex: 10h às 21h | Sáb: 10h às 21h | Dom: 10h às 19h",
   },
   locationInfo: {
     label: "Onde",
@@ -38,7 +38,7 @@ export const HOME_VISIT_PLANNER_SECTION: HomeVisitPlannerSectionContent = {
   mapUrl: "https://maps.google.com/?q=Parque+Vila+Germanica+Blumenau",
   calendarLabel: "Adicionar à agenda",
   calendarUrl:
-    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casa+Constru%C3%A7%C3%A3o+2026&dates=20260709T210000Z/20260712T220000Z&details=Feira+Casa+Constru%C3%A7%C3%A3o&location=Parque+Vila+Germ%C3%A2nica,+Blumenau",
+    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casa+Constru%C3%A7%C3%A3o+2026&dates=20260709T130000Z/20260712T220000Z&details=Feira+Casa+Constru%C3%A7%C3%A3o&location=Parque+Vila+Germ%C3%A2nica,+Blumenau",
   cashbackTitle: "Seu ingresso vira cashback!*",
   cashbackNote: "*Consulte condições no local",
   bottomHeading: "Não perca esta oportunidade",

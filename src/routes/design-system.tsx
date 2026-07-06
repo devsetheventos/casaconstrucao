@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import {
   Badge,
   Box,
@@ -50,6 +51,16 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 // ─── Componente principal ────────────────────────────────────────────────────
 function DesignSystem() {
+  useEffect(() => {
+    const m = document.createElement("meta");
+    m.name = "robots";
+    m.content = "noindex";
+    document.head.appendChild(m);
+    return () => {
+      document.head.removeChild(m);
+    };
+  }, []);
+
   return (
     <Stack gap="0" bg="#1E1E1E" minH="100vh">
       {/* ── 1. HERO — GradientSection rotacionado ── */}
@@ -65,7 +76,7 @@ function DesignSystem() {
         px={{ base: "6", md: "12", lg: "20" }}
       >
         <Stack maxW="800px" gap="6">
-          <SectionLabel>Casa Construção • Edição 2025</SectionLabel>
+          <SectionLabel>Casa & Construção • Edição 2026</SectionLabel>
 
           <Heading textStyle="display" as="h1">
             Do construir{" "}
@@ -129,7 +140,7 @@ function DesignSystem() {
       >
         <SimpleGrid columns={{ base: 2, md: 4 }} gap="8">
           {[
-            { number: "200+", label: "Expositores" },
+            { number: "100+", label: "Expositores" },
             { number: "15k", label: "Visitantes" },
             { number: "4", label: "Dias de evento" },
             { number: "10+", label: "Anos de história" },
@@ -714,9 +725,9 @@ function DesignSystem() {
           <GridItem>
             <Stack gap="4" h="full">
               {[
-                { icon: "🔍", text: "Comparar fornecedores no mesmo de lugar" },
+                { icon: "🔍", text: "Comparar fornecedores no mesmo lugar" },
                 { icon: "🤝", text: "Negociar presencialmente" },
-                { icon: "📦", text: "Ver matérias ao vivo" },
+                { icon: "📦", text: "Ver materiais ao vivo" },
                 { icon: "💬", text: "Tirar dúvidas com quem produz" },
                 { icon: "🛒", text: "Comprar com melhores condições" },
               ].map((item) => (
@@ -816,7 +827,7 @@ function DesignSystem() {
         >
           <Stack gap="1">
             <Text textStyle="h3" color="#EEEEEE">
-              CASA CONSTRUÇÃO
+              CASA & CONSTRUÇÃO
             </Text>
             <Text textStyle="body.sm">
               9 a 12 de Julho • Parque Vila Germânica, Blumenau
@@ -842,7 +853,7 @@ function DesignSystem() {
 
         <HStack justify="space-between" flexWrap="wrap" gap="4">
           <Text textStyle="body.sm">
-            © 2025 Casa Construção. Todos os direitos reservados.
+            © 2026 Casa & Construção. Todos os direitos reservados.
           </Text>
           <HStack gap="4">
             <Text

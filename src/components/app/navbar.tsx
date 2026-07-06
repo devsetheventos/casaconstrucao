@@ -6,6 +6,7 @@ import { useState } from "react";
 import {
   Box,
   Button,
+  chakra,
   CloseButton,
   Drawer,
   HStack,
@@ -68,7 +69,7 @@ export function Navbar() {
         <Link to="/" onClick={() => setOpen(false)}>
           <Image
             src="/svg/icon-light.svg"
-            alt="Casa Construção"
+            alt="Casa & Construção"
             h="28px"
             w="auto"
             opacity={0.9}
@@ -79,12 +80,12 @@ export function Navbar() {
         <HStack gap="2">
           {/* Social Links */}
           <IconButton
-            onClick={() => openExternalLink("https://instagram.com")}
+            onClick={() => openExternalLink("https://www.instagram.com/feiracasa.construcao")}
             aria-label="Instagram"
             variant="plain"
             size="sm"
-            color="#EEEEEE"
-            _hover={{ bg: "rgba(255,255,255,0.06)", color: "#FFFFFF" }}
+            color="fg.default"
+            _hover={{ bg: "rgba(255,255,255,0.06)", color: "fg.onDark" }}
             w="10"
             h="10"
           >
@@ -92,12 +93,16 @@ export function Navbar() {
           </IconButton>
 
           <IconButton
-            onClick={() => openExternalLink("https://whatsapp.com")}
+            onClick={() =>
+              openExternalLink(
+                "https://api.whatsapp.com/send?phone=554791322878&text=Ol%C3%A1!%20Tenho%20interesse%20em%20participar%20da%20Casa%20%26%20Constru%C3%A7%C3%A3o%20como%20expositor.%20Poderia%20me%20enviar%20mais%20informa%C3%A7%C3%B5es%3F",
+              )
+            }
             aria-label="WhatsApp"
             variant="plain"
             size="sm"
-            color="#EEEEEE"
-            _hover={{ bg: "rgba(255,255,255,0.06)", color: "#FFFFFF" }}
+            color="fg.default"
+            _hover={{ bg: "rgba(255,255,255,0.06)", color: "fg.onDark" }}
             w="10"
             h="10"
           >
@@ -115,7 +120,7 @@ export function Navbar() {
           <Drawer.Trigger asChild>
             <IconButton
               aria-label="Abrir menu"
-              color="#EEEEEE"
+              color="fg.default"
               cursor="pointer"
               bg="transparent"
               border="none"
@@ -123,7 +128,7 @@ export function Navbar() {
               onClick={() => setOpen(!open)}
               variant="plain"
               size="sm"
-              _hover={{ bg: "rgba(255,255,255,0.06)", color: "#FFFFFF" }}
+              _hover={{ bg: "rgba(255,255,255,0.06)", color: "fg.onDark" }}
               w="10"
               h="10"
             >
@@ -138,7 +143,7 @@ export function Navbar() {
         <Drawer.Backdrop bg="rgba(0,0,0,0.6)" backdropFilter="blur(4px)" />
         <Drawer.Positioner>
           <Drawer.Content
-            bg="#1E1E1E"
+            bg="bg.canvas"
             borderRight="1px solid #2C2C2C"
             maxW="260px"
           >
@@ -147,13 +152,14 @@ export function Navbar() {
               px="5"
               pt="5"
               pb="4"
-              borderBottom="1px solid #2C2C2C"
+              borderBottom="1px solid"
+              borderColor="border.muted"
             >
               <HStack justify="space-between" align="center" w={"full"}>
                 <Link to="/" onClick={() => setOpen(false)}>
                   <Image
                     src="/svg/icon-light.svg"
-                    alt="Casa Construção"
+                    alt="Casa & Construção"
                     h="40px"
                     w="auto"
                     opacity={0.9}
@@ -162,8 +168,8 @@ export function Navbar() {
                 <Drawer.CloseTrigger asChild pos="initial">
                   <CloseButton
                     size="sm"
-                    color="#9A9A9A"
-                    _hover={{ color: "#EEEEEE", bg: "#272727" }}
+                    color="fg.subtle"
+                    _hover={{ color: "fg.default", bg: "bg.surface" }}
                   />
                 </Drawer.CloseTrigger>
               </HStack>
@@ -174,38 +180,43 @@ export function Navbar() {
               <Stack gap="1" as="ul" listStyleType="none" m="0" p="0">
                 {NAVBAR_SECTION_LINKS.map((link) => (
                   <Box as="li" key={link.sectionId}>
-                    <Box
+                    <chakra.button
+                      type="button"
                       onClick={() => handleSectionNavigation(link.sectionId)}
+                      display="block"
+                      w="full"
+                      textAlign="left"
                       py="3"
                       px="3"
                       borderRadius="lg"
                       fontFamily="'Blauer Nue', sans-serif"
                       fontSize="sm"
                       fontWeight="500"
-                      color="#9A9A9A"
+                      color="fg.subtle"
                       transition="all 0.15s"
-                      _hover={{ color: "#EEEEEE", bg: "#272727" }}
+                      _hover={{ color: "fg.default", bg: "bg.surface" }}
+                      _focusVisible={{ outline: "2px solid", outlineColor: "#EEEEEE", outlineOffset: "2px" }}
                       cursor="pointer"
                     >
                       {link.label}
-                    </Box>
+                    </chakra.button>
                   </Box>
                 ))}
               </Stack>
 
-              <Separator borderColor="#2C2C2C" my="6" />
+              <Separator borderColor="border.muted" my="6" />
 
               {/* CTA */}
               <Button
                 w="full"
-                bg="#4A5B45"
-                color="#EEEEEE"
+                bg="brand.green"
+                color="fg.default"
                 fontFamily="'Blauer Nue', sans-serif"
                 fontWeight="600"
                 fontSize="sm"
                 letterSpacing="wide"
                 borderRadius="full"
-                _hover={{ bg: "#687E62" }}
+                _hover={{ bg: "brand.greenLight" }}
                 transition="background 0.2s"
                 onClick={() => handleSectionNavigation(HOME_SECTION_IDS.visitPlanner)}
               >

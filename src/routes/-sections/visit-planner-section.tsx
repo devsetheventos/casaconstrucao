@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Center,
+  Heading,
   HStack,
   Image,
   Stack,
@@ -43,7 +44,7 @@ function PlannerInfoBlock({
         </Text>
         <Text
           textStyle="h2"
-          color="#EEEEEE"
+          color="fg.default"
           fontSize={{ base: "3xl", md: "5xl" }}
           lineHeight="1.05"
         >
@@ -97,23 +98,24 @@ export function VisitPlannerSection() {
           textAlign="center"
         >
           <Stack gap="2">
-            <Text
+            <Heading
+              as="h2"
               textStyle="h1"
               fontSize={{ base: "4xl", md: "7xl" }}
-              color="#EEEEEE"
+              color="fg.default"
             >
               {content.heading}
-            </Text>
+            </Heading>
             <Text
               textStyle="h3"
-              color="#E1E1E1"
+              color="fg.muted"
               fontSize={{ base: "xl", md: "3xl" }}
             >
               {content.subheading}
             </Text>
             <Text
               textStyle="body.md"
-              color="#E1E1E1"
+              color="fg.muted"
               fontSize={{ base: "md", md: "2xl" }}
             >
               {content.helperText}
@@ -156,9 +158,9 @@ export function VisitPlannerSection() {
                 w={{ base: "full", md: "fit-content" }}
                 px={{ base: 8, md: 12 }}
                 borderRadius="full"
-                bg="#EEEEEE"
-                color="#1E1E1E"
-                _hover={{ bg: "#E1E1E1" }}
+                bg="bg.paper"
+                color="fg.ink"
+                _hover={{ bg: "fg.muted" }}
                 fontSize={{ base: "md", md: "lg" }}
                 onClick={() => openExternalLink(content.mapUrl)}
               >
@@ -170,7 +172,7 @@ export function VisitPlannerSection() {
                 px={{ base: 8, md: 12 }}
                 borderRadius="full"
                 bg="#8B1F25"
-                color="#EEEEEE"
+                color="fg.default"
                 border="1px solid rgba(238,238,238,0.2)"
                 _hover={{ bg: "#74181D" }}
                 fontSize={{ base: "md", md: "lg" }}
@@ -184,14 +186,14 @@ export function VisitPlannerSection() {
           <Stack gap="0.5">
             <Text
               textStyle="h3"
-              color="#EEEEEE"
+              color="fg.default"
               fontSize={{ base: "2xl", md: "3xl" }}
             >
               {content.cashbackTitle}
             </Text>
             <Text
               textStyle="body.md"
-              color="#E1E1E1"
+              color="fg.muted"
               fontSize={{ base: "md", md: "xl" }}
             >
               {content.cashbackNote}
@@ -199,16 +201,17 @@ export function VisitPlannerSection() {
           </Stack>
 
           <Stack gap="1">
-            <Text
+            <Heading
+              as="h2"
               textStyle="h1"
-              color="#EEEEEE"
+              color="fg.default"
               fontSize={{ base: "3xl", md: "7xl" }}
             >
               {content.bottomHeading}
-            </Text>
+            </Heading>
             <Text
               textStyle="h3"
-              color="#E1E1E1"
+              color="fg.muted"
               fontSize={{ base: "xl", md: "3xl" }}
               maxW="900px"
             >

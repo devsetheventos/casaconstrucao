@@ -1,8 +1,8 @@
 /* ─── Google Fonts ──────────────────────────────────────────────────────────
    Libre Baskerville Italic: único acento tipográfico (arquivo local não incluído)
    Blauer Nue: toda a tipografia — carregada localmente via @font-face abaixo
+   (Libre Baskerville é carregada via <link> em index.html — evita @import bloqueante)
 ─────────────────────────────────────────────────────────────────────────── */
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@1,400&display=swap");
 
 /* ─── Blauer Nue — fontes locais ────────────────────────────────────────────*/
 @font-face {

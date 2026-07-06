@@ -7,8 +7,9 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { useNavigate } from "@tanstack/react-router";
 import { LuArrowDown } from "react-icons/lu";
+import { HOME_SECTION_IDS } from "@/constants/navigation-sections";
+import { scrollToSection } from "@/lib/scrollToSection";
 import { HeroStats } from "@/components/app/hero/hero-stats";
 import { HeroCountdown } from "@/components/app/hero/hero-countdown";
 import { HeroInfoStrip } from "@/components/app/hero/hero-info-strip";
@@ -18,7 +19,6 @@ import { fade, fadeUp, pressableTransition, staggerContainer } from "@/motion/pr
 import { useReducedMotion } from "framer-motion";
 
 export function HeroSection() {
-  const navigate = useNavigate();
   const reduceMotion = useReducedMotion();
 
   return (
@@ -47,7 +47,7 @@ export function HeroSection() {
               <MotionBox variants={fadeUp(reduceMotion)}>
                 <Image
                   src="/svg/icon-light.svg"
-                  alt="Casa Construção Logo"
+                  alt=""
                   h={{ base: "48px", md: "100px" }}
                   w="auto"
                   mb={{ base: 3, md: 6 }}
@@ -56,7 +56,7 @@ export function HeroSection() {
               <MotionBox variants={fadeUp(reduceMotion)}>
                 <Image
                   src="/svg/logo-full-light.svg"
-                  alt="Casa Construção Logo"
+                  alt="Casa & Construção"
                   h={{ base: "48px", md: "160px" }}
                   w="auto"
                   maxW="100%"
@@ -67,10 +67,10 @@ export function HeroSection() {
               <MotionBox variants={fade(reduceMotion)}>
                 <Text
                   letterSpacing="wider"
-                  fontWeight="200"
+                  fontWeight="400"
                   fontSize={{ base: "xs", md: "lg" }}
                   mb={{ base: 5, md: 8 }}
-                  color="whiteAlpha.700"
+                  color="fg.muted"
                 >
                   Construção | Acabamentos | Mobiliário | Decoração
                 </Text>
@@ -78,7 +78,7 @@ export function HeroSection() {
 
               <MotionBox variants={fadeUp(reduceMotion)}>
                 <Box position="relative" mb={{ base: 7, md: 12 }}>
-                  <Heading letterSpacing={"tighter"} fontSize={{ base: "5xl", md: "7xl" }} lineHeight="1.1">
+                  <Heading as="h1" letterSpacing={"tighter"} fontSize={{ base: "5xl", md: "7xl" }} lineHeight="1.1">
                     Do
                     <Text
                       as="span"
@@ -122,7 +122,7 @@ export function HeroSection() {
                 w={{ base: "full", md: "auto" }}
               >
                 <Button
-                  onClick={() => navigate({ to: "/" })}
+                  onClick={() => scrollToSection(HOME_SECTION_IDS.benefits)}
                   w={{ base: "full", md: "fit-content" }}
                   size="lg"
                   bg="brand.red"

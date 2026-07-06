@@ -1,4 +1,4 @@
-import { Accordion, Box, HStack, Stack, Text } from "@chakra-ui/react";
+import { Accordion, Box, Heading, HStack, Stack, Text } from "@chakra-ui/react";
 import { LuChevronDown } from "react-icons/lu";
 import { HOME_FAQ_SECTION } from "@/constants/home-faq";
 
@@ -9,9 +9,10 @@ export function FaqSection() {
         w="full"
         maxW="1400px"
         mx="auto"
-        bg="#EEEEEE"
+        bg="bg.paper"
         borderRadius={{ base: "2xl", md: "3xl" }}
-        border="1px solid #3A3A3A"
+        border="1px solid"
+        borderColor="border.default"
         px={{ base: 4, md: 8 }}
         py={{ base: 6, md: 10 }}
         backgroundImage="url('/noise.svg'), linear-gradient(#EEEEEE, #EEEEEE)"
@@ -20,12 +21,12 @@ export function FaqSection() {
         backgroundBlendMode="overlay, normal"
       >
         <Stack gap={{ base: 6, md: 8 }}>
-          <Text textAlign="center" textStyle="h1" color="#1E1E1E" fontSize={{ base: "2xl", md: "7xl" }}>
+          <Heading as="h2" textAlign="center" textStyle="h1" color="fg.ink" fontSize={{ base: "2xl", md: "7xl" }}>
             {HOME_FAQ_SECTION.heading}
-          </Text>
+          </Heading>
 
           <Box
-            bg="#1E1E1E"
+            bg="bg.canvas"
             borderRadius="3xl"
             border="1px solid rgba(238,238,238,0.5)"
             px={{ base: 4, md: 8 }}
@@ -40,7 +41,7 @@ export function FaqSection() {
                 <Accordion.Item key={item.id} value={item.id} borderColor="rgba(238,238,238,0.05)">
                   <Accordion.ItemTrigger py={{ base: 4, md: 5 }}>
                     <HStack gap="4" flex="1" textAlign="left">
-                      <Text textStyle="h3" color="#9A9A9A" fontSize={{ base: "sm", md: "2xl" }}>
+                      <Text textStyle="h3" color="fg.subtle" fontSize={{ base: "sm", md: "2xl" }}>
                         {item.question}
                       </Text>
                     </HStack>
@@ -50,7 +51,7 @@ export function FaqSection() {
                   </Accordion.ItemTrigger>
                   <Accordion.ItemContent>
                     <Accordion.ItemBody pb={{ base: 5, md: 6 }}>
-                      <Text textStyle="body.md" color="#E1E1E1" maxW="1100px" fontSize={{ base: "xs", md: "md" }}>
+                      <Text textStyle="body.md" color="fg.muted" maxW="1100px" fontSize={{ base: "xs", md: "md" }}>
                         {item.answer}
                       </Text>
                     </Accordion.ItemBody>

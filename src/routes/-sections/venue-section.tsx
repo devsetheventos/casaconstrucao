@@ -106,9 +106,9 @@ export function VenueSection() {
             backdropFilter="blur(4px)"
           >
             <HStack justify="space-between" align="center">
-              <Text textStyle="h1" color="fg.ink" fontSize={{ base: "2xl", md: "4xl" }}>
+              <Heading as="h3" textStyle="h1" color="fg.ink" fontSize={{ base: "2xl", md: "4xl" }}>
                 {HOME_VENUE_SECTION.scheduleTitle}
-              </Text>
+              </Heading>
               <Badge
                 bg="fg.ink"
                 color="bg.paper"
@@ -129,7 +129,7 @@ export function VenueSection() {
               size={{ base: "sm", md: "lg" }}
               bg="bg.paper"
               color="fg.ink"
-              border="1px solid"
+              border="none"
               borderColor="border.default"
               borderRadius="xl"
               overflow="hidden"

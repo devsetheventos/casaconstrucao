@@ -268,6 +268,20 @@ const config = defineConfig({
             _dark: "{colors.green.light}",
           },
         },
+        // Hairline branca translúcida (containers de seção sobre fundo escuro)
+        "border.subtle": {
+          value: {
+            base: "rgba(255,255,255,0.08)",
+            _dark: "rgba(255,255,255,0.08)",
+          },
+        },
+        // Borda sutil para superfícies claras (paper)
+        "border.onLight": {
+          value: {
+            base: "rgba(30,30,30,0.12)",
+            _dark: "rgba(30,30,30,0.12)",
+          },
+        },
 
         // Feedback
         "feedback.success": {

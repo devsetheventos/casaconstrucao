@@ -25,10 +25,10 @@ export function HeroInfoStrip() {
       >
         <MotionBox variants={fadeUp(reduceMotion)}>
           <HStack gap="3">
-            <Box color="#EEEEEE">
+            <Box color="fg.default">
               <Image
                 src="/svg/calendar.svg"
-                alt="Ícone de Calendário"
+                alt=""
                 boxSize={{ base: "40px", md: "56px" }}
                 objectFit="contain"
               />
@@ -36,7 +36,7 @@ export function HeroInfoStrip() {
             <Stack gap="0" align="flex-start" justify="center">
               <Text
                 textStyle="label"
-                color="#EEEEEE"
+                color="fg.default"
                 lineHeight="1"
                 fontSize={{ base: "xs", md: "md" }}
               >
@@ -56,10 +56,10 @@ export function HeroInfoStrip() {
 
         <MotionBox variants={fadeUp(reduceMotion)}>
           <HStack gap="3">
-            <Box color="#EEEEEE">
+            <Box color="fg.default">
               <Image
                 src="/svg/blumenau.svg"
-                alt="Ícone de Blumenau"
+                alt=""
                 boxSize={{ base: "40px", md: "56px" }}
                 objectFit="contain"
               />
@@ -77,10 +77,10 @@ export function HeroInfoStrip() {
 
         <MotionBox variants={fadeUp(reduceMotion)}>
           <HStack gap="3">
-            <Box color="#EEEEEE">
+            <Box color="fg.default">
               <Image
                 src="/svg/vilagermanica.svg"
-                alt="Ícone da Vila Germânica"
+                alt=""
                 boxSize={{ base: "40px", md: "56px" }}
                 objectFit="contain"
               />
@@ -88,7 +88,7 @@ export function HeroInfoStrip() {
             <Stack gap="0" align="flex-start" justify="center">
               <Text
                 textStyle="label"
-                color="#EEEEEE"
+                color="fg.default"
                 lineHeight="1"
                 fontSize={{ base: "xs", md: "sm" }}
               >

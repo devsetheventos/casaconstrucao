@@ -1,9 +1,17 @@
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { GradientSection } from "@/components/ui/gradient-section";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 function AnimatedNumber({ value }: { value: string }) {
+  const reduce = useReducedMotion();
+  if (reduce) {
+    return (
+      <Box position="relative" display="inline-block" h="1em" lineHeight="1">
+        {value}
+      </Box>
+    );
+  }
   return (
     <Box position="relative" display="inline-block" overflow="hidden" h="1em" lineHeight="1">
       <AnimatePresence mode="popLayout" initial={false}>
@@ -34,8 +42,8 @@ export function HeroCountdown() {
   });
 
   useEffect(() => {
-    // Data alvo: 9 de Julho de 2026 às 09:00:00 (Brasília)
-    const targetDate = new Date("2026-07-09T09:00:00-03:00").getTime();
+    // Data alvo: 9 de Julho de 2026 às 10:00:00 (Brasília) — abertura oficial
+    const targetDate = new Date("2026-07-09T10:00:00-03:00").getTime();
 
     const updateTimer = () => {
       const difference = targetDate - new Date().getTime();
@@ -109,7 +117,7 @@ export function HeroCountdown() {
           >
             <AnimatedNumber value={pad(timeLeft.days)} />
           </Box>
-          <Text textStyle="label" mt="2" color="#EEEEEE" fontSize={{ base: "xs", md: "sm" }}>
+          <Text textStyle="label" mt="2" color="fg.default" fontSize={{ base: "xs", md: "sm" }}>
             Dias
           </Text>
         </Stack>
@@ -135,7 +143,7 @@ export function HeroCountdown() {
           >
             <AnimatedNumber value={pad(timeLeft.hours)} />
           </Box>
-          <Text textStyle="label" mt="2" color="#EEEEEE" fontSize={{ base: "xs", md: "sm" }}>
+          <Text textStyle="label" mt="2" color="fg.default" fontSize={{ base: "xs", md: "sm" }}>
             Horas
           </Text>
         </Stack>
@@ -163,7 +171,7 @@ export function HeroCountdown() {
           >
             <AnimatedNumber value={pad(timeLeft.minutes)} />
           </Box>
-          <Text textStyle="label" mt="2" color="#EEEEEE" fontSize={{ base: "xs", md: "sm" }}>
+          <Text textStyle="label" mt="2" color="fg.default" fontSize={{ base: "xs", md: "sm" }}>
             Min
           </Text>
         </Stack>
@@ -191,7 +199,7 @@ export function HeroCountdown() {
           >
             <AnimatedNumber value={pad(timeLeft.seconds)} />
           </Box>
-          <Text textStyle="label" mt="2" color="#EEEEEE" fontSize={{ base: "xs", md: "sm" }}>
+          <Text textStyle="label" mt="2" color="fg.default" fontSize={{ base: "xs", md: "sm" }}>
             Seg
           </Text>
         </Stack>

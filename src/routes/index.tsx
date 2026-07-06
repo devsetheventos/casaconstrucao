@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Box, Stack } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { HeroSection } from "./-sections/hero-section";
-// import { VideoSection } from "./-sections/video-section";
 import { BenefitsSection } from "./-sections/benefits-section";
 import { SegmentsSection } from "./-sections/segments-section";
 import { GallerySection } from "./-sections/gallery-section";
@@ -29,9 +28,6 @@ function HomePage() {
       <Box id={HOME_SECTION_IDS.top}>
         <HeroSection />
       </Box>
-      {/* <Box id={HOME_SECTION_IDS.video}>
-        <VideoSection />
-      </Box> */}
       <Box id={HOME_SECTION_IDS.benefits}>
         <BenefitsSection />
       </Box>
@@ -41,14 +37,14 @@ function HomePage() {
       <Box id={HOME_SECTION_IDS.gallery}>
         <GallerySection />
       </Box>
+      <Box id={HOME_SECTION_IDS.partnership}>
+        <PartnershipCtaSection />
+      </Box>
       <Box id={HOME_SECTION_IDS.venue}>
         <VenueSection />
       </Box>
       <Box id={HOME_SECTION_IDS.nextEditions}>
         <NextEditionsSection />
-      </Box>
-      <Box id={HOME_SECTION_IDS.partnership}>
-        <PartnershipCtaSection />
       </Box>
       <Box id={HOME_SECTION_IDS.visitPlanner}>
         <VisitPlannerSection />

@@ -4,7 +4,7 @@ import { MotionBox } from "@/motion/chakra-motion";
 import { fadeUp, staggerContainer } from "@/motion/presets";
 
 const STATS = [
-  { value: "200+", label: "Expositores" },
+  { value: "100+", label: "Expositores" },
   { value: "15k+", label: "Visitantes esperados" },
   { value: "4", label: "Dias de evento" },
   { value: "10+", label: "Segmentos" },
@@ -57,7 +57,7 @@ export function HeroStats() {
               textAlign="center"
               textStyle="label"
               mt="1"
-              color="#9A9A9A"
+              color="fg.subtle"
               lineHeight={1.1}
             >
               {stat.label}

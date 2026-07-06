@@ -3,25 +3,14 @@ export interface HomeFooterSectionContent {
   logoAlt: string;
   instagramUrl: string;
   whatsappUrl: string;
-  navLinks: Array<{ label: string; href: string }>;
-  legalLinks: Array<{ label: string; href: string }>;
   copyrightText: string;
 }
 
 export const HOME_FOOTER_SECTION: HomeFooterSectionContent = {
   logoSrc: "/svg/logo-full-light.svg",
-  logoAlt: "Casa Construção",
-  instagramUrl: "https://instagram.com",
-  whatsappUrl: "https://wa.me/5547999999999",
-  navLinks: [
-    { label: "Início", href: "/" },
-    { label: "Expositores", href: "/expositores" },
-    { label: "Programação", href: "/programacao" },
-    { label: "Ingressos", href: "/ingressos" },
-  ],
-  legalLinks: [
-    { label: "Política de Privacidade", href: "/privacidade" },
-    { label: "Termos de Uso", href: "/termos" },
-  ],
-  copyrightText: "© 2026 Casa e Construção. Todos os direitos reservados.",
+  logoAlt: "Casa & Construção",
+  instagramUrl: "https://www.instagram.com/feiracasa.construcao",
+  whatsappUrl:
+    "https://api.whatsapp.com/send?phone=554791322878&text=Ol%C3%A1!%20Tenho%20interesse%20em%20participar%20da%20Casa%20%26%20Constru%C3%A7%C3%A3o%20como%20expositor.%20Poderia%20me%20enviar%20mais%20informa%C3%A7%C3%B5es%3F",
+  copyrightText: "© 2026 Casa & Construção. Todos os direitos reservados.",
 };

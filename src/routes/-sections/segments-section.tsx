@@ -2,6 +2,7 @@ import {
   Box,
   Center,
   Flex,
+  Heading,
   Icon,
   Stack,
   Text,
@@ -10,7 +11,7 @@ import {
 import type { IconType } from "react-icons";
 import { FaCouch, FaHome, FaPaintBrush } from "react-icons/fa";
 import { HOME_SEGMENTS_SECTION } from "@/constants/home-segments";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const SEGMENT_ICONS: Record<string, IconType> = {
   Construção: FaHome,
@@ -19,6 +20,7 @@ const SEGMENT_ICONS: Record<string, IconType> = {
 };
 
 function SegmentImage({ src, alt }: { src: string; alt: string }) {
+  const reduce = useReducedMotion();
   return (
     <Box
       borderRadius="2xl"
@@ -28,7 +30,7 @@ function SegmentImage({ src, alt }: { src: string; alt: string }) {
     >
       <motion.div
         initial="initial"
-        whileHover="hover"
+        whileHover={reduce ? undefined : "hover"}
         style={{ width: "100%", height: "100%", position: "relative" }}
       >
         <motion.div
@@ -100,13 +102,14 @@ function SegmentInfoCard({
     <Stack
       flex="1"
       borderRadius="2xl"
-      border="1px solid #3A3A3A"
-      bg="#F3F3F3"
+      border="1px solid"
+      borderColor="border.default"
+      bg="bg.paperSoft"
       backgroundImage="url('/noise.svg'), linear-gradient(#F3F3F3, #F3F3F3)"
       backgroundRepeat="repeat, no-repeat"
       backgroundSize="256px 256px, cover"
       backgroundBlendMode="overlay, normal"
-      color="#1E1E1E"
+      color="fg.ink"
       px={{ base: 5, md: 6 }}
       py={{ base: 6, md: 8 }}
       justify="center"
@@ -114,7 +117,7 @@ function SegmentInfoCard({
       textAlign="center"
     >
       <Stack align="center" gap="3" mb="3">
-        <Center boxSize="56px" borderRadius="md" bg="#1E1E1E" color="#EEEEEE" flexShrink={0}>
+        <Center boxSize="56px" borderRadius="md" bg="bg.canvas" color="fg.default" flexShrink={0}>
           <Icon as={SegmentIcon} boxSize="28px" />
         </Center>
         <Text
@@ -130,7 +133,7 @@ function SegmentInfoCard({
           <Text
             key={topic}
             textStyle="body.md"
-            color="#444444"
+            color="fg.inkSubtle"
             fontSize={{ base: "md", md: "xl" }}
           >
             {topic}
@@ -155,23 +158,25 @@ export function SegmentsSection() {
         w="full"
         maxW="1400px"
         mx="auto"
-        bg="#EEEEEE"
+        bg="bg.paper"
         backgroundImage="url('/noise.svg'), linear-gradient(#EEEEEE, #EEEEEE)"
         backgroundBlendMode="overlay, normal"
         borderRadius="3xl"
-        border="1px solid #3A3A3A"
+        border="1px solid"
+        borderColor="border.default"
         px={{ base: 4, md: 8, lg: 10 }}
         py={{ base: 6, md: 12 }}
       >
         <Stack gap={{ base: 8, md: 12 }}>
-          <Text
+          <Heading
+            as="h2"
             textAlign="center"
             fontFamily="'Blauer Nue', sans-serif"
             fontSize={{ base: "3xl", md: "5xl" }}
-            color="#1E1E1E"
+            color="fg.ink"
           >
             {HOME_SEGMENTS_SECTION.heading}
-          </Text>
+          </Heading>
 
           <Stack gap={{ base: 4, md: 5 }}>
             {/* Segmento 1: imagem | card */}

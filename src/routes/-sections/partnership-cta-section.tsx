@@ -2,9 +2,9 @@ import {
   Badge,
   Box,
   Button,
+  Heading,
   HStack,
   Icon,
-  Image,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -28,27 +28,7 @@ const VARIANT_STYLE = {
     buttonHover: "#A83639",
     border: "rgba(210,68,71,0.4)",
   },
-  blue: {
-    color: "blue" as const,
-    customColor: "#4A58E2",
-    rotateDeg: -18,
-    originX: "86%",
-    originY: "8%",
-    ellipseW: 200,
-    ellipseH: 80,
-    bgScale: 1.52,
-    accent: "#8C96FF",
-    buttonBg: "#4450D2",
-    buttonHover: "#3640A8",
-    border: "rgba(68,80,210,0.45)",
-  },
 };
-
-const LOGO_SIZE_MAP = {
-  "leiincentivo.svg": { h: { base: "38px", md: "100px" } },
-  "ministericultura.svg": { h: { base: "32px", md: "63px" } },
-  "governobrasil.svg": { h: { base: "34px", md: "90px" } },
-} as const;
 
 export function PartnershipCtaSection() {
   return (
@@ -88,7 +68,7 @@ export function PartnershipCtaSection() {
                 <Badge
                   w="fit-content"
                   bg="rgba(255,255,255,0.14)"
-                  color="#EEEEEE"
+                  color="fg.default"
                   border="1px solid rgba(255,255,255,0.26)"
                   borderRadius="full"
                   px="4"
@@ -100,11 +80,12 @@ export function PartnershipCtaSection() {
                   {item.tag}
                 </Badge>
 
-                <Text
+                <Heading
+                  as="h2"
                   textStyle="h1"
                   fontSize={{ base: "2xl", md: "5xl" }}
                   lineHeight={{ base: "1.25", md: "1.03" }}
-                  color="#EEEEEE"
+                  color="fg.default"
                 >
                   {item.titleStart}{" "}
                   <Text
@@ -115,12 +96,12 @@ export function PartnershipCtaSection() {
                   >
                     {item.titleAccent}
                   </Text>
-                </Text>
+                </Heading>
 
                 <Text
                   textStyle="body.lg"
                   fontSize={{ base: "md", md: "xl" }}
-                  color="#E1E1E1"
+                  color="fg.muted"
                   maxW="760px"
                 >
                   {item.description}
@@ -137,7 +118,7 @@ export function PartnershipCtaSection() {
                       <Icon as={LuCheck} color={style.accent} boxSize="5" />
                       <Text
                         textStyle="body.md"
-                        color="#E1E1E1"
+                        color="fg.muted"
                         fontSize={{ base: "sm", md: "md" }}
                       >
                         {highlight}
@@ -151,7 +132,7 @@ export function PartnershipCtaSection() {
                     <Badge
                       key={label}
                       bg="rgba(0,0,0,0.22)"
-                      color="#E1E1E1"
+                      color="fg.muted"
                       border="1px solid rgba(255,255,255,0.18)"
                       borderRadius="full"
                       px="4"
@@ -165,45 +146,13 @@ export function PartnershipCtaSection() {
                   ))}
                 </HStack>
 
-                {item.logos && item.logos.length > 0 ? (
-                  <HStack
-                    gap={{ base: 3, md: 8 }}
-                    flexWrap="wrap"
-                    justify="center"
-                    w="full"
-                    py="4"
-                  >
-                    {item.logos.map((logo) =>
-                      (() => {
-                        const fileName = logo
-                          .split("/")
-                          .pop() as keyof typeof LOGO_SIZE_MAP;
-                        const logoSize = LOGO_SIZE_MAP[fileName] ?? {
-                          h: { base: "34px", md: "46px" },
-                        };
-                        return (
-                          <Image
-                            key={logo}
-                            src={logo}
-                            alt="Logo institucional"
-                            h={logoSize.h}
-                            w="auto"
-                            objectFit="contain"
-                            opacity="0.95"
-                          />
-                        );
-                      })(),
-                    )}
-                  </HStack>
-                ) : null}
-
                 <Button
                   w={{ base: "full", md: "fit-content" }}
                   size="lg"
                   borderRadius="full"
                   px="8"
                   bg={style.buttonBg}
-                  color="#EEEEEE"
+                  color="fg.default"
                   _hover={{ bg: style.buttonHover }}
                   fontFamily="'Blauer Nue', sans-serif"
                   fontSize={{ base: "md", md: "lg" }}

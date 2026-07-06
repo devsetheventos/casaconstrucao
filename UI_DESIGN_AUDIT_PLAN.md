@@ -25,14 +25,16 @@ Este documento organiza uma revisão completa do site com foco em consistência 
 - Tipografia: manter Blauer Nue como base e Libre Baskerville apenas para acentos (itálico).
 - Responsividade: manter escala tipográfica e espaçamentos coerentes (base → md → lg).
 
-## Fase 0 — Bloqueadores técnicos (para “funcionar 100%”)
+## Fase 0 — Bloqueadores técnicos (para “funcionar 100%”) — RESOLVIDO
 
-**Motivo:** lint e build atualmente falham por erros pré-existentes em `src/components/ui/rich-text-editor*` e interfaces vazias em componentes UI.
+**Status:** Resolvido. `npm run lint` e `npm run build` passam atualmente. Os arquivos de snippet `src/components/ui/rich-text-editor*` foram removidos do projeto, eliminando os erros de `any` explícito e as integrações/tipos do TipTap; as interfaces vazias nos wrappers UI já não bloqueiam o lint.
 
-- Corrigir regras `@typescript-eslint/no-empty-object-type` nos wrappers UI.
-- Remover `any` explícito em rich-text-editor (ou justificar com tipos corretos).
-- Ajustar integrações/tipos do TipTap (comandos ausentes em `ChainedCommands`) e imports “compositions/*”.
-- Garantir `npm run lint` e `npm run build` passando antes do refinamento final de UI (evita “feedback falso”).
+Itens originais (todos concluídos):
+
+- ~~Corrigir regras `@typescript-eslint/no-empty-object-type` nos wrappers UI.~~
+- ~~Remover `any` explícito em rich-text-editor (ou justificar com tipos corretos).~~ — arquivos removidos.
+- ~~Ajustar integrações/tipos do TipTap (comandos ausentes em `ChainedCommands`) e imports “compositions/*”.~~ — arquivos removidos.
+- ~~Garantir `npm run lint` e `npm run build` passando antes do refinamento final de UI (evita “feedback falso”).~~ — lint/build verdes.
 
 ## Fase 1 — Auditoria de tokens e padronização de estilo
 

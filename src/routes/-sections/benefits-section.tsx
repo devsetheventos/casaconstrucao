@@ -47,7 +47,8 @@ export function BenefitsSection() {
         w="full"
         noise
         borderRadius="3xl"
-        border="1px solid rgba(255, 255, 255, 0.08)"
+        border="1px solid"
+        borderColor="border.subtle"
         py={{ base: 8, md: 14 }}
         px={{ base: 4, md: 8, lg: 10 }}
       >
@@ -62,7 +63,7 @@ export function BenefitsSection() {
                   fontWeight="600"
                   lineHeight={{ base: "1.2", md: "1.1" }}
                   letterSpacing="tight"
-                  color="#EEEEEE"
+                  color="fg.default"
                   maxW="1100px"
                 >
                   {HOME_BENEFITS_SECTION.headingStart}{" "}
@@ -70,15 +71,15 @@ export function BenefitsSection() {
                     as="span"
                     fontFamily="'Libre Baskerville', Georgia, serif"
                     fontStyle="italic"
-                    bg="#D24447"
-                    color="#EEEEEE"
+                    bg="brand.red"
+                    color="fg.default"
                     px={{ base: "2", md: "3" }}
                     py="1"
                   >
                     {HOME_BENEFITS_SECTION.headingAccent}
                   </Text>
                 </Heading>
-                <Text textStyle="h3" color="#9A9A9A" fontWeight="500">
+                <Text textStyle="h3" color="fg.subtle" fontWeight="500">
                   {HOME_BENEFITS_SECTION.subtitle}
                 </Text>
               </Stack>
@@ -110,8 +111,8 @@ export function BenefitsSection() {
                         flexShrink={0}
                         boxSize={{ base: "52px", md: "64px" }}
                         borderRadius="lg"
-                        bg="#EEEEEE"
-                        color="#1E1E1E"
+                        bg="bg.paper"
+                        color="fg.ink"
                         display="flex"
                       >
                         <Icon
@@ -124,13 +125,13 @@ export function BenefitsSection() {
                           fontFamily="'Blauer Nue', sans-serif"
                           fontSize={{ base: "xl", md: "4xl" }}
                           lineHeight={{ base: "1.25", md: "1" }}
-                          color="#EEEEEE"
+                          color="fg.default"
                         >
                           {item.title}
                         </Text>
                         <Text
                           textStyle="body.lg"
-                          color="#9A9A9A"
+                          color="fg.subtle"
                           lineHeight={{ base: "1.5", md: "1" }}
                           fontSize={{ base: "sm", md: "2xl" }}
                         >
@@ -151,7 +152,7 @@ export function BenefitsSection() {
                 fontWeight="500"
                 fontSize={{ base: "3xl", md: "6xl" }}
                 lineHeight="1.1"
-                color="#EEEEEE"
+                color="fg.default"
               >
                 {HOME_BENEFITS_SECTION.footerStart}{" "}
                 <Text
